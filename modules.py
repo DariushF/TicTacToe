@@ -166,7 +166,6 @@ class Game:
         index_col: int - the number of the column of the field that shall be changed
         """
         if not self.board[indices] == 0:
-            print('field is not free')
             return
 
         self.symbols_placed += 1
@@ -287,7 +286,6 @@ class Game:
         elif player_index == 3:
             message = 'it\'s a tie'
 
-        print(message)
         if label is not None:
             label['text'] = message
             self.disable_buttons()

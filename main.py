@@ -76,7 +76,6 @@ def get_win():
 if __name__ == '__main__':
     # mainloop
     while True:
-        # print(game.board)
         while True:
             try:
                 if not game.player_turn == 1:
