@@ -60,7 +60,7 @@ reset_button = Button(tk, text='reset', font=('Helvetica', 20, 'bold'), bg='#1c1
                       command=lambda: game.reset(update_gui=True))
 reset_button.grid(row=4, column=2)
 
-game.train(40000, print_progress=True)
+game.train(100000, print_progress=True)
 game.player1.save_q_values('player1')
 game.player2.save_q_values('player2')
 

@@ -144,7 +144,7 @@ class Game:
         iterations (int) - the number of games the two agents will play
         print_progress (bool) - if a message with the training progress should be print to the console"""
         for i in range(iterations):
-            if print_progress and (i + 1) % 10 == 0:
+            if print_progress and (i + 1) % 100 == 0:
                 print(f'{i+1}/{iterations} games trained')
             while True:
                 player_action = tuple()
