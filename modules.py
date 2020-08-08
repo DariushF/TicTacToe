@@ -131,6 +131,7 @@ class Game:
         self.symbols_placed = 0
         self.total_games = 0  # count of all played games
         self.buttons = []
+        self.win_label = None
         self.player1 = Agent(0.3, 0.2, 0.9, 1, 'X')
         self.player2 = Agent(0.2, 0.3, 0.9, 2, 'O')
 
@@ -256,6 +257,7 @@ class Game:
         self.player1.states = list()
         self.player2.states = list()
         if update_gui:
+            self.win_label['text'] = ''
             for button in self.buttons:
                 button['state'] = NORMAL
                 button['text'] = ''
@@ -272,12 +274,11 @@ class Game:
                     available_fields.append((i, j))
         return available_fields
 
-    def player_win(self, player_index: int, label: Label = None):
+    def player_win(self, player_index: int):
         """method that outputs which player has won
 
         params:
-        player_index (int) - (1, 2 or 3) the index of the player who won (should come from Game.check_win() output)
-        label (tkinter.Label) - win Label on GUI"""
+        player_index (int) - (1, 2 or 3) the index of the player who won (should come from Game.check_win() output)"""
         message = ''
         if player_index == 1:
             message = 'Player1 wins'
@@ -286,8 +287,8 @@ class Game:
         elif player_index == 3:
             message = 'it\'s a tie'
 
-        if label is not None:
-            label['text'] = message
+        if self.win_label is not None:
+            self.win_label['text'] = message
             self.disable_buttons()
 
     def disable_buttons(self):

@@ -55,6 +55,7 @@ game.buttons.append(button8)
 
 win_label = Label(tk, text='', font=('Helvetica', 20, 'bold'), bg='#fff')
 win_label.grid(row=4, column=0, columnspan=2)
+game.win_label = win_label
 
 reset_button = Button(tk, text='reset', font=('Helvetica', 20, 'bold'), bg='#1c1c1c', fg='white', height=2, width=8,
                       command=lambda: game.reset(update_gui=True))
