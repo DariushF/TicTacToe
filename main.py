@@ -62,14 +62,14 @@ reset_button = Button(tk, text='reset', font=('Helvetica', 20, 'bold'), bg='#1c1
 reset_button.grid(row=4, column=2)
 
 game.train(100000, print_progress=True)
-game.player1.save_q_values('player1')
-game.player2.save_q_values('player2')
+# game.player1.save_q_values('player1')
+# game.player2.save_q_values('player2')
 
 
 def get_win():
     win = game.check_win()
     if win != 0:
-        game.player_win(win, win_label)
+        game.player_win(win)
         game.reset()
         return True
 
